@@ -14,7 +14,6 @@ public class ImageSystem {
 	private BufferedImage image;
 	private char selectedChar;
 	private String selectedImage;
-	private LinkedList<Pixel> imageMap;
 	
 	public ImageSystem() throws IOException {
 		this.selectedChar = '*';
@@ -25,6 +24,7 @@ public class ImageSystem {
 	}
 	
 	public void selectImage() {
+		
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.showOpenDialog(null);
 		this.selectedImage = fileChooser.getSelectedFile().getAbsolutePath();
