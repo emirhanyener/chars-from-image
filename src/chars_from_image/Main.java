@@ -15,6 +15,7 @@ public class Main {
 			System.out.println("+paste (Paste file path)");
 			System.out.println("+path (Control selected image path)");
 			System.out.println("+draw (Draw selected image)");
+			System.out.println("+char (Selected image char)");
 			System.out.println("+exit (Exit)");
 			System.out.print("Command: ");
 			command = scn.next();
@@ -23,15 +24,20 @@ public class Main {
 				imgsys.selectImage();
 				
 			}
-			if(command.contains("paste")) {
+			else if(command.contains("paste")) {
 				System.out.println("Image path: ");
 				temp = scn.next();
 				imgsys.setSelectedImage(temp);
 			}
-			if(command.contains("draw")) {
+			else if(command.contains("char")) {
+				System.out.println("Selected char: ");
+				temp = scn.next();
+				imgsys.setSelectedChar(temp.charAt(0));
+			}
+			else if(command.contains("draw")) {
 				imgsys.drawImage();
 			}
-			if(command.contains("path")) {
+			else if(command.contains("path")) {
 				System.out.println(imgsys.getSelectedImage());
 			}
 			
